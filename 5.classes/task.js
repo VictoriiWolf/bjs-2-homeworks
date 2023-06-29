@@ -8,7 +8,7 @@ class PrintEditionItem{
     }
 
     fix(){
-        this.state * 1.5;
+        this.state *= 1.5;
     }
 
     set state(newState) {
@@ -88,3 +88,6 @@ class Library{
     }
 
 }
+
+
+
