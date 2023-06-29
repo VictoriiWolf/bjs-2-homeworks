@@ -6,17 +6,18 @@ class PrintEditionItem{
         this.state = 100;
         this.type = null;
     }
-    fix() {
+
+    fix(){
         this.state * 1.5;
     }
 
-    set state(newReleaseDate) {
-        if(newReleaseDate < 0) {
+    set state(newState) {
+        if(newState < 0) {
             this._state = 0;
-        } else if(newReleaseDate > 100) {
+        } else if(newState > 100) {
             this._state = 100;
         } else {
-            this._state = newReleaseDate;
+            this._state = newState;
         }
     }
 
@@ -64,16 +65,16 @@ class DetectiveBook extends Book{
 
 class Library{
     constructor(name, books){
-        this.name = 'name';
+        this.name = name;
         this.books = [];
     }
 
     addBook(book){
         if(book.state > 30) {
-            this.books.push(...book)
+            this.books.push(book)
         }
     }
-    
+
     findBookBy(type, value){
         return this.books.find(book => book[type] == value) || null; 
     }
@@ -85,4 +86,5 @@ class Library{
         }
         return book;
     }
+
 }
