@@ -5,8 +5,8 @@ class AlarmClock {
     }
 
     addClock(time, callback) {
-        if(time === undefined || callback === undefined) {
-            throw new Error('Отсутсвуют обязательные аргуенты');
+        if(time == undefined || callback == undefined) {
+            throw new Error('Отсутсвуют обязательные аргументы');
         } 
         
         const check = this.alarmCollection.find(item => item.time === time);
@@ -53,7 +53,7 @@ class AlarmClock {
                         item.callback();
                     }
                 });
-            });
+            }, 1000);
         }
     }
 
